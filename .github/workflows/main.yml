@@ -1,2 +1,33 @@
-- name: Deploy to Neocities
-  uses: bcomnes/deploy-to-neocities@v3.0.6
+name: Deploy to neocities
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy-to-neocities
+  cancel-in-progress: true
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Install deps and build
+        run: | 
+          npm 1
+          npm run build
+
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: $ (( secrets.NEOCITIES_API_TOKEN))
+          cleanup: false
+          neocities_suppoter: false
+          preview_before_deploy: true
+          dist_dir: public

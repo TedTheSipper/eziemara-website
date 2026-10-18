@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ez1emara.dev</title>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-container">
+                 <!--side overview-->
+                    <div id="column1">
+                        <h1>About Me</h1>
+                            <p><span class="bold">Name: </span>@Ez1emara</p>
+                            <p><span class="bold">Pronouns: </span>They/Them</p>
+                            <p><span class="bold">Age: </span><span id="age"></span></p>
+                    </div>
+                 <!--Bio-->
+              <div id="column2">
+                    <div id="two" class="box">
+                        <p class="biography">
+                        <p>Hey there im Ezie!</p>
+                        I am a self proclaimed artist, designer, part-time programmer (I at least made the website :3), and full-time evil schemer >:3 <br>
+                        A few of my favorite things besides hobbies include: Music, Watching Movies/Tv Shows, and playing Deadlock. I love conversing with friends <br>
+                        and making new ones. Though I'm kinda super shy and super quiet most days. 
+                    </div>
+              </div>
+        </div>     
+    </div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="guestbook.html">Guestbook</a>
+    </div>
+  
+    <script>
+         var birthDate = new Date(2006, 28, 4, 0, 0, 0, 0);
+         var currentDate = new Date();
+         var age = currentDate.getFullYear() - birthDate.getFullYear();
+         var month = currentDate.getMonth() - birthDate.getMonth();
+         var day = currentDate.getDate() - birthDate.getDate();
+                
+        if  (month < 0 || month  == 0 && day < 0 )
+        {
+            age --;
+        }
+        document.getElementById('age').textContent = (age + " y/o" );        
+    </script>
+</body>
+</html>
