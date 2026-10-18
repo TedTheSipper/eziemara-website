@@ -9,6 +9,9 @@ concurrency:
   group: deploy-to-neocities
   cancel-in-progress: true
 
+runs: 
+  using: node24
+
 
 jobs:
   deploy:
